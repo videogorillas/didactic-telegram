@@ -27,13 +27,27 @@ export default class BuySellComponent extends Component {
           spinner: false, products: products
       }));
     });
+//     this.setState((prevState, props) => ({
+//       spinner: false, 
+//       products: [
+//         {"url":"files/Gaming_consoles_Xbox_360__Xbox/17421.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"},
+//         {"url":"files/Headphones_Ear-Hook/s-l400.jpg.300","dist":0,"cat":"Headphones_Ear-Hook"},
+//         {"url":"files/Televisions_VCRs/11965.jpg","dist":0,"cat":"Televisions_VCRs"},
+//         {"url":"files/Audiotehnika_MiniDisc_Decks/8501.jpg","dist":0,"cat":"Audiotehnika_MiniDisc_Decks"},
+//         {"url":"files/Audiotehnika_Radio_Tuners/32034.jpg","dist":0,"cat":"Audiotehnika_Radio_Tuners"},
+//         {"url":"files/glasses_case/397468924_5ebae5f656.jpg","dist":0,"cat":"glasses_case"},
+//         {"url":"files/sport_rest_Heart_Rate_Monitors/279375.jpg","dist":0,"cat":"sport_rest_Heart_Rate_Monitors"},
+//         {"url":"files/Gaming_consoles_Xbox_One/1446.jpg","dist":0,"cat":"Gaming_consoles_Xbox_One"},
+//         {"url":"files/TV_Video__Audio_Accessories_Antennas__Dishes/21878.jpg","dist":0,"cat":"TV_Video__Audio_Accessories_Antennas__Dishes"},
+//         {"url":"files/Gaming_consoles_Xbox_360__Xbox/18093.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"}]
+//     }));
   }
   
   render() {
     console.log('BuySellComponent props: ' + JSON.stringify(this.props));
     let buttonsFlexDirection = 'row'; // << TODO
     let uri = this.props.photo;
-//     uri = 'http://podol.videogorillas.com:4243/files/DVD_Blu_Rays_Portable_DVD_Player/27238.jpg';
+//     uri = 'http://podol.videogorillas.com:4243/files/TV_Video__Audio_Accessories_Antennas__Dishes/21878.jpg';
 //     let uri = 'file:///storage/emulated/0/DCIM/IMG_20170210_215538.jpg'; // << TODO
 //     let uri = this.props.appState.photo;
     
@@ -60,7 +74,7 @@ export default class BuySellComponent extends Component {
                </View>
            </TouchableHighlight>
         </View>
-        <Spinner visible={this.state.spinner} />
+        <Spinner visible={this.state.spinner} textContent={"Processing..."} textStyle={{color: '#FFFFFF', fontSize: 15}}/>
       </View>
     )
   }

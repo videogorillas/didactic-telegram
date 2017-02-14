@@ -11,20 +11,26 @@ export default class BuyComponent extends Component {
     let dataSource = ds.cloneWithRows(this.props.products);
     
     return (
-      <View style={{backgroundColor: '#000000', flex: 1}}>
-        <Image source={{uri: uri}} style={{flex: 1}}/>
-        <ListView dataSource={dataSource} renderRow={this.renderRow}/>
+      <View style={{flex: 1}}>
+        <ScrollView>
+          <View style={{height: 250}}>
+            <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1}}/>
+          </View>
+          <Text style={{color: 'black', textAlign: 'left', padding: 5, fontSize: 20}}>Similar products:</Text>
+          <ListView dataSource={dataSource} renderRow={this.renderRow.bind(this)}/>
+        </ScrollView>
       </View>
     )
   }
-//   {this.props.products.map(this.renderRow)}
-// <ListView dataSource={dataSource} renderRow={this.renderRow}/>
+
   renderRow(row) {
-      let url = 'http://podol.videogorillas.com:4243/' + row.url;
-      console.log('>> url: ' + url);
-        return (<View key={row.id} style={{backgroundColor: 'white', margin: 10, flexDirection: 'column'}}>
-          <Image source={{uri: url}} style={{flex: 1}}/>
-          <Text style={{color: 'black', textAlign: 'left', padding: 10}}>{row.cat}</Text>
-        </View>)
-     }
+    let uri = 'http://podol.videogorillas.com:4243/' + row.url;
+      return (
+      <View key={row.id} style={{backgroundColor: 'white', marginTop: 20, flexDirection: 'column'}}>
+        <View style={{height: 250}}>
+          <Image source={{uri: uri}} resizeMode='contain' style={{flex: 1, backgroundColor: 'gray'}}/>
+        </View>
+        <Text style={{color: 'black', textAlign: 'center', padding: 5}}>{row.cat}</Text>
+      </View>)
+   }
 }

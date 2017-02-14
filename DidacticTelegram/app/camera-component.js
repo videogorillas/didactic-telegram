@@ -8,8 +8,6 @@ import {
       Dimensions,
 	} from 'react-native'
 
-import Spinner from 'react-native-loading-spinner-overlay'
-
 import { Actions } from 'react-native-router-flux';
 import Camera from 'react-native-camera'
 import {styles} from './styles'
@@ -21,10 +19,6 @@ export default class CameraComponent extends Component {
       super(props);
       this.state = {layout: {width: 0, height: 0, orientation: 'undefined', portrait: true, landscape: false},
                    spinner: false};
-    }
-  
-    setSpinner(spinner) {
-        this.setState({spinner: spinner});
     }
   
     render() {
@@ -58,7 +52,7 @@ export default class CameraComponent extends Component {
             </View>
         )
     }
-//   <Spinner visible={this.state.spinner} />
+  
     takePicture() {
         console.log('>> takePicture()');
         this.camera.capture()
@@ -70,7 +64,6 @@ export default class CameraComponent extends Component {
           }).catch(err => {
             console.error(err);
             Alert.alert('Capturing ', '' + err);
-//             this.setSpinner(false);
         });
     }
   

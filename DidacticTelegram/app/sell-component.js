@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, ListView, Image, Switch, TouchableHighlight } from 'react-native';
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import { getCategories } from './product-utils'
 import {styles} from './styles'
 
 export default class SellComponent extends Component {
+  static navigationOptions = {
+    title: 'Sell',
+  };
+  
   constructor(props) {
       super(props);
       this.state = {cats: []};
   }
   
   componentWillMount() {
-    let cats = getCategories(this.props.products);
+//     let products = this.props.products;
+    let products = this.props.navigation.state.params.products;
+    let cats = getCategories(products);
     this.setState(prevState => ({
       cats: cats
     }));
   }
 
   render() {
-    let uri = this.props.photo;
+//     let uri = this.props.photo;
+    let uri = this.props.navigation.state.params.photo;    
 
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});  
     let dataSource = ds.cloneWithRows(this.state.cats);

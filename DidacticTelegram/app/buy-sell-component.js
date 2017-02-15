@@ -9,12 +9,16 @@ import {
 	  View,
       ListView,
 	} from 'react-native'
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import {styles} from './styles'
 
 import Spinner from 'react-native-loading-spinner-overlay'
 
 export default class BuySellComponent extends Component {
+  static navigationOptions = {
+    title: 'Choose an action',
+  };
+  
   constructor(props) {
       super(props);
       this.state = {spinner: true, products: false};
@@ -46,7 +50,9 @@ export default class BuySellComponent extends Component {
   render() {
     console.log('BuySellComponent props: ' + JSON.stringify(this.props));
     let buttonsFlexDirection = 'row'; // << TODO
-    let uri = this.props.photo;
+
+    let uri = this.props.navigation.state.params.photo;
+//     let uri = this.props.photo;
     
     return (
       <View style={{backgroundColor: '#000000', flex: 1}}>
@@ -83,7 +89,8 @@ export default class BuySellComponent extends Component {
   }
   
   products() {
-    const photo = this.props.photo;
+//     const photo = this.props.photo;
+    const photo = this.props.navigation.state.params.photo;
     const url = 'http://podol.videogorillas.com:4243/upload';
     this.setSpinner(true);
     return this.uploadPicture(photo, url).then(result => {
@@ -100,11 +107,13 @@ export default class BuySellComponent extends Component {
   }
   
   buy() {
-    Actions.buy({photo: this.props.photo, products: this.state.products}); 
+    this.props.navigation.navigate('Buy', {photo: this.props.navigation.state.params.photo, products: this.state.products});
+//     Actions.buy({photo: this.props.photo, products: this.state.products}); 
   }
   
   sell() {
-    Actions.sell({photo: this.props.photo, products: this.state.products}); 
+    this.props.navigation.navigate('Sell', {photo: this.props.navigation.state.params.photo, products: this.state.products});
+//     Actions.sell({photo: this.props.photo, products: this.state.products}); 
   }
   
   uploadPicture(path, url) {

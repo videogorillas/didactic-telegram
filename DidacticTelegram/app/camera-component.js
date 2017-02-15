@@ -8,13 +8,17 @@ import {
       Dimensions,
 	} from 'react-native'
 
-import { Actions } from 'react-native-router-flux';
+// import { Actions } from 'react-native-router-flux';
 import Camera from 'react-native-camera'
 import {styles} from './styles'
 
 var equal = require('deep-equal');
 
 export default class CameraComponent extends Component {
+    static navigationOptions = {
+      title: 'Take a photo',
+    };
+  
     constructor(props) {
       super(props);
       this.state = {layout: {width: 0, height: 0, orientation: 'undefined', portrait: true, landscape: false},
@@ -58,9 +62,8 @@ export default class CameraComponent extends Component {
         this.camera.capture()
           .then(data => {
               console.log('>> picture taken. data: ' + JSON.stringify(data));
-// 	    	  this.props.setPhoto(data.path);
-//               doUpload(data.path);
-              Actions.buySell({photo: data.path});
+//               Actions.buySell({photo: data.path});
+              this.props.navigation.navigate('BuySell', {photo: data.path});
           }).catch(err => {
             console.error(err);
             Alert.alert('Capturing ', '' + err);

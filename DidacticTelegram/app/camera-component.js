@@ -42,7 +42,7 @@ export default class CameraComponent extends Component {
                   height: layout.height,
                   width: layout.width
                 }}
-                aspect={Camera.constants.Aspect.fit}
+                aspect={Camera.constants.Aspect.fill}
                 captureQuality={"high"}
                 playSoundOnCapture={false}
                 orientation={"auto"}/>

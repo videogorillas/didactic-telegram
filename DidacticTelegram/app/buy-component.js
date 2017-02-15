@@ -4,7 +4,7 @@ import { ScrollView, View, Text, ListView, Image } from 'react-native';
 
 export default class BuyComponent extends Component {
   static navigationOptions = {
-    title: 'Buy',
+    title: 'Buy similar products',
   };
   
   render() {
@@ -20,24 +20,26 @@ export default class BuyComponent extends Component {
     return (
       <View style={{flex: 1}}>
         <ScrollView>
-          <View style={{height: 250}}>
+          <View style={{height: 200}}>
             <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1}}/>
           </View>
-          
+          <Text style={{padding: 10}}>
+            Check out these products that our customers sell:
+          </Text>
           <ListView dataSource={dataSource} renderRow={this.renderRow.bind(this)}/>
         </ScrollView>
       </View>
     )
   }
-// <Text style={{color: 'black', textAlign: 'left', padding: 5, fontSize: 20}}>Similar products:</Text>
+
   renderRow(cat) {
     let uri = 'http://podol.videogorillas.com:4243/' + cat.url;
       return (
-      <View key={cat.id} style={{backgroundColor: 'white', marginTop: 20, flexDirection: 'column'}}>
+      <View key={cat.id} style={{marginBottom: 20, flexDirection: 'column'}}>
         <View style={{height: 250}}>
-          <Image source={{uri: uri}} resizeMode='contain' style={{flex: 1, backgroundColor: 'gray'}}/>
+          <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1, backgroundColor: 'gray'}}/>
         </View>
-        <Text style={{color: 'black', textAlign: 'center', padding: 5}}>{cat.cat.split('_').join(' ')}</Text>
+        <Text style={{textAlign: 'left', padding: 10}}>{cat.cat.split('_').join(' ')}</Text>
       </View>)
    }
 }

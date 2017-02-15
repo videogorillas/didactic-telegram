@@ -6,7 +6,7 @@ import {styles} from './styles'
 
 export default class SellComponent extends Component {
   static navigationOptions = {
-    title: 'Sell',
+    title: 'Sell your product',
   };
   
   constructor(props) {
@@ -33,9 +33,12 @@ export default class SellComponent extends Component {
     return (
       <View style={{flex: 1}}>
         <ScrollView>
-          <View style={{height: 250}}>
+          <View style={{height: 200}}>
             <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1}}/>
           </View>
+          <Text style={{padding: 10}}>
+            Select categories that apply to your product best:
+          </Text>
           <ListView dataSource={dataSource} renderRow={this.renderRow.bind(this)}/>
           
           <View style={{justifyContent: 'space-around', flexDirection: 'row', backgroundColor: 'black'}}>
@@ -48,7 +51,7 @@ export default class SellComponent extends Component {
       </View>
     )
   }
-  
+
   done() {
      console.log('>> cats selected: ' + JSON.stringify(this.state.cats));
   }
@@ -57,7 +60,7 @@ export default class SellComponent extends Component {
       return (
       <View key={cat.id} style={{margin: 10, flexDirection: 'row'}}>
         <Switch value={this.selected(cat)} onValueChange={(value) => this.checkCat.call(this, cat, value)}/>
-        <Text style={{color: 'black', textAlign: 'left', alignSelf: 'center'}}>{cat.cat.split('_').join(' ')}</Text>
+        <Text style={{textAlign: 'left'}}>{cat.cat.split('_').join(' ')}</Text>
       </View>)
   }
   

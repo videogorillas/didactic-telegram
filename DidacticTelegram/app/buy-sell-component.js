@@ -16,7 +16,7 @@ import Spinner from 'react-native-loading-spinner-overlay'
 
 export default class BuySellComponent extends Component {
   static navigationOptions = {
-    title: 'Choose an action',
+    title: 'Sell or buy?',
   };
   
   constructor(props) {

@@ -23,13 +23,13 @@ export default class BuyComponent extends Component {
           <View style={{height: 250}}>
             <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1}}/>
           </View>
-          <Text style={{color: 'black', textAlign: 'left', padding: 5, fontSize: 20}}>Similar products:</Text>
+          
           <ListView dataSource={dataSource} renderRow={this.renderRow.bind(this)}/>
         </ScrollView>
       </View>
     )
   }
-
+// <Text style={{color: 'black', textAlign: 'left', padding: 5, fontSize: 20}}>Similar products:</Text>
   renderRow(cat) {
     let uri = 'http://podol.videogorillas.com:4243/' + cat.url;
       return (

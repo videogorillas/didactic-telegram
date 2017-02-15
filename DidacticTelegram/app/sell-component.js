@@ -55,8 +55,8 @@ export default class SellComponent extends Component {
   
   renderRow(cat, sectionID, rowID) {
       return (
-      <View key={cat.id} style={{backgroundColor: 'white', margin: 10, flexDirection: 'row'}}>
-        <Switch style={{marginBottom: 10}} value={this.selected(cat)} onValueChange={(value) => this.checkCat.call(this, cat, value)}/>
+      <View key={cat.id} style={{margin: 10, flexDirection: 'row'}}>
+        <Switch value={this.selected(cat)} onValueChange={(value) => this.checkCat.call(this, cat, value)}/>
         <Text style={{color: 'black', textAlign: 'left', alignSelf: 'center'}}>{cat.cat.split('_').join(' ')}</Text>
       </View>)
   }

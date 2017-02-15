@@ -25,26 +25,26 @@ export default class BuySellComponent extends Component {
   }
   
   componentWillMount() {
-//     this.products().then(
-//       products => {
-//         this.setState((prevState, props) => ({
-//           spinner: false, products: products
-//       }));
-//     });
-    this.setState((prevState, props) => ({
-      spinner: false, 
-      products: [
-        {"url":"files/Gaming_consoles_Xbox_360__Xbox/17421.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"},
-        {"url":"files/Headphones_Ear-Hook/s-l400.jpg.300","dist":0,"cat":"Headphones_Ear-Hook"},
-        {"url":"files/Televisions_VCRs/11965.jpg","dist":0,"cat":"Televisions_VCRs"},
-        {"url":"files/Audiotehnika_MiniDisc_Decks/8501.jpg","dist":0,"cat":"Audiotehnika_MiniDisc_Decks"},
-        {"url":"files/Audiotehnika_Radio_Tuners/32034.jpg","dist":0,"cat":"Audiotehnika_Radio_Tuners"},
-        {"url":"files/glasses_case/397468924_5ebae5f656.jpg","dist":0,"cat":"glasses_case"},
-        {"url":"files/sport_rest_Heart_Rate_Monitors/279375.jpg","dist":0,"cat":"sport_rest_Heart_Rate_Monitors"},
-        {"url":"files/Gaming_consoles_Xbox_One/1446.jpg","dist":0,"cat":"Gaming_consoles_Xbox_One"},
-        {"url":"files/TV_Video__Audio_Accessories_Antennas__Dishes/21878.jpg","dist":0,"cat":"TV_Video__Audio_Accessories_Antennas__Dishes"},
-        {"url":"files/Gaming_consoles_Xbox_360__Xbox/18093.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"}]
-    }));
+    this.products().then(
+      products => {
+        this.setState((prevState, props) => ({
+          spinner: false, products: products
+      }));
+    });
+//     this.setState((prevState, props) => ({
+//       spinner: false, 
+//       products: [
+//         {"url":"files/Gaming_consoles_Xbox_360__Xbox/17421.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"},
+//         {"url":"files/Headphones_Ear-Hook/s-l400.jpg.300","dist":0,"cat":"Headphones_Ear-Hook"},
+//         {"url":"files/Televisions_VCRs/11965.jpg","dist":0,"cat":"Televisions_VCRs"},
+//         {"url":"files/Audiotehnika_MiniDisc_Decks/8501.jpg","dist":0,"cat":"Audiotehnika_MiniDisc_Decks"},
+//         {"url":"files/Audiotehnika_Radio_Tuners/32034.jpg","dist":0,"cat":"Audiotehnika_Radio_Tuners"},
+//         {"url":"files/glasses_case/397468924_5ebae5f656.jpg","dist":0,"cat":"glasses_case"},
+//         {"url":"files/sport_rest_Heart_Rate_Monitors/279375.jpg","dist":0,"cat":"sport_rest_Heart_Rate_Monitors"},
+//         {"url":"files/Gaming_consoles_Xbox_One/1446.jpg","dist":0,"cat":"Gaming_consoles_Xbox_One"},
+//         {"url":"files/TV_Video__Audio_Accessories_Antennas__Dishes/21878.jpg","dist":0,"cat":"TV_Video__Audio_Accessories_Antennas__Dishes"},
+//         {"url":"files/Gaming_consoles_Xbox_360__Xbox/18093.jpg","dist":0,"cat":"Gaming_consoles_Xbox_360__Xbox"}]
+//     }));
   }
   
   render() {

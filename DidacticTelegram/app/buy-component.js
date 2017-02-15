@@ -35,9 +35,9 @@ export default class BuyComponent extends Component {
   renderRow(cat) {
     let uri = 'http://podol.videogorillas.com:4243/' + cat.url;
       return (
-      <View key={cat.id} style={{marginBottom: 20, flexDirection: 'column'}}>
+      <View key={cat.id} style={{marginBottom: 20, flexDirection: 'column', backgroundColor: 'lightgray'}}>
         <View style={{height: 250}}>
-          <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1, backgroundColor: 'gray'}}/>
+          <Image source={{uri: uri}} resizeMode='cover' style={{flex: 1, backgroundColor: 'lightgray'}}/>
         </View>
         <Text style={{textAlign: 'left', padding: 10}}>{cat.cat.split('_').join(' ')}</Text>
       </View>)

@@ -40,18 +40,17 @@ export default class SellComponent extends Component {
             Select categories that apply to your product best:
           </Text>
           <ListView dataSource={dataSource} renderRow={this.renderRow.bind(this)}/>
-          
-          <View style={{justifyContent: 'space-around', flexDirection: 'row', backgroundColor: 'black'}}>
-            <TouchableHighlight onPress={this.done.bind(this)} activeOpacity={1} underlayColor={'#d3d3d355'} style={{borderRadius: 48}}>
-              <Image source={require('./ic_forward_white_24dp.png')} style={styles.ibutton} />
-            </TouchableHighlight>
-          </View>
-          
         </ScrollView>
       </View>
     )
   }
-
+//   <View style={{justifyContent: 'space-around', flexDirection: 'row', backgroundColor: 'black'}}>
+//             <TouchableHighlight onPress={this.done.bind(this)} activeOpacity={1} underlayColor={'#d3d3d355'} style={{borderRadius: 48}}>
+//               <Image source={require('./ic_forward_white_24dp.png')} style={styles.ibutton} />
+//             </TouchableHighlight>
+//           </View>
+  
+// <ActionButton icon="done" onPress={this.done.bind(this)}/>
   done() {
      console.log('>> cats selected: ' + JSON.stringify(this.state.cats));
   }

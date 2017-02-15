@@ -14,11 +14,11 @@ const styles = StyleSheet.create({
 	    height: Dimensions.get('window').height,
 	    width: Dimensions.get('window').width
 	  },
-// 	  ibutton: {
-// 	    margin: 20,
-//         padding: 10,
-// 	    alignSelf: 'center',
-// 	  },
+	  ibutton: {
+	    margin: 20,
+        padding: 10,
+	    alignSelf: 'center',
+	  },
 })
 
 export {styles}
